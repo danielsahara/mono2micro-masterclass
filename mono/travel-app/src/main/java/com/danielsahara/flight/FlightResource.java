@@ -1,5 +1,6 @@
 package com.danielsahara.flight;
 
+import com.danielsahara.hotel.Hotel;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -20,6 +21,13 @@ public class FlightResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Flight findById(@QueryParam("id") long id) {
         return Flight.findById(id);
+    }
+
+    @GET
+    @Path("findByTravelOrderId")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Flight findByTravelOrderId(@QueryParam("travelOrderId") long travelOrderId) {
+        return Flight.findByTravelOrderId(travelOrderId);
     }
 
     @Transactional
