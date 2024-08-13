@@ -1,8 +1,5 @@
 package com.danielsahara.travelorder;
 
-import com.danielsahara.flight.Flight;
-import com.danielsahara.hotel.Hotel;
-
 public class TraverOrderDTO {
 
     private String fromAirport;
@@ -25,7 +22,7 @@ public class TraverOrderDTO {
         if (hotel == null){
             hotel = new Hotel();
         }
-        return new TraverOrderDTO(flight.fromAirport, flight.toAirport, hotel.nights);
+        return new TraverOrderDTO(flight.getFromAirport(), flight.getToAirport(), hotel.getNights());
     }
 
     public static TraverOrderDTO of(String fromAirport, String toAirport, Integer nights) {
